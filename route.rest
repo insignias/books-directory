@@ -1,0 +1,23 @@
+GET http://localhost:3000/booksDirectory/
+
+###
+POST http://localhost:3000/booksDirectory
+Content-Type: application/json
+
+{
+    "name": "The art of money",
+    "author": "Michael",
+    "year": 2010
+}
+
+###
+PATCH  http://localhost:3000/booksDirectory/64f57a700bfd12941978b5a4
+Content-Type: application/json
+
+{
+    "author": "Agatha"
+}
+
+###
+DELETE  http://localhost:3000/booksDirectory/64f57a700bfd12941978b5a4
+
