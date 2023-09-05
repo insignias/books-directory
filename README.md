@@ -9,7 +9,7 @@ NodeJS Rest Api for Books Directory
 5. DELETE - Delete a book by id
 
 ## Run Application:
-`npm run dev`
-
-## Test
+`npm install`
+`npm run build`
 `npm run test`
+`npm run start`
