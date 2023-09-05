@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
-import { directoryModel } from '../model';
 import { getBookById } from '../middleware';
+import { directoryModel } from '../model';
 
 export const router = Router();
 
@@ -71,3 +71,4 @@ router.delete('/:id', getBookById, async (req: Request, res: Response) => {
         res.status(500).json({ message: error.message})
     }
 })
+

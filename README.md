@@ -8,6 +8,8 @@ NodeJS Rest Api for Books Directory
 4. GET - Get a book by id
 5. DELETE - Delete a book by id
 
-## Instructions:
-1. npm run dev
-1. Use *route.rest* file to send HTTP requests
+## Run Application:
+`npm run dev`
+
+## Test
+`npm run test`

@@ -25,3 +25,4 @@ const directorySchema: Schema = new Schema({
 });
 
 export const directoryModel = model("directoryModel", directorySchema)
+export const testModel = model('testModel', directorySchema)

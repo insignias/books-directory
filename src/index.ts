@@ -1,22 +1,19 @@
-import express, { Application, json } from 'express';
 import { config } from 'dotenv';
 import { db } from './db';
-import { router } from './routes';
+import { createServer } from './app';
 
 config({path: '.env'})
 
 const port = process.env.PORT || 4000;
 
-const app: Application = express();
+const app = createServer();
 
-db.on('error', (error) => console.error(error));
-db.once('open', () => console.log('Connected to Database'))
-db.on('disconnected', () => 'Disconnected from Database')
+app.listen(port, async () => {
+    console.log(`Server started at port: ${port}`)
 
-app.use(json());
+    await db.on('error', (error) => console.error(error));
+    await db.once('open', () => console.log('Connected to Database'))
+    await db.on('disconnected', () => 'Disconnected from Database')
+});
 
-const booksDirectoryRouter = router;
-
-app.use('/booksDirectory', booksDirectoryRouter);
-
-app.listen(port, () => console.log(`Server started at port: ${port}`));
+export default app;
